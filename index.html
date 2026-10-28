@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0879b8" />
+  <title>Water Rush | Connect Water. Create Impact.</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="site-header">
+      <img class="brand" src="logo.png" alt="charity: water" />
+      <span class="header-tagline">CONNECT WATER. CREATE IMPACT.</span>
+    </header>
+
+    <section id="home-screen" class="screen active" aria-labelledby="home-title">
+      <div class="home-hero">
+        <div class="home-copy">
+          <span class="eyebrow">A CLEAN WATER PUZZLE ADVENTURE</span>
+          <h1 id="home-title">WATER <span>RUSH</span></h1>
+          <p>Build safe pipelines. Deliver clean water. Keep sewage away from the water supply.</p>
+          <button id="play-button" class="btn btn-primary btn-large">PLAY GAME <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="home-art" aria-hidden="true"><img src="home.png" alt="Clean water source connected to a house"></div>
+      </div>
+      <div class="how-to">
+        <h2>HOW TO PLAY</h2>
+        <div class="instruction-grid">
+          <div><span class="instruction-icon">↻</span><strong>Rotate pipes</strong><p>Tap or click to turn a pipe 90°.</p></div>
+          <div><span class="instruction-icon">💧</span><strong>Deliver water</strong><p>Connect the blue source to the house.</p></div>
+          <div><span class="instruction-icon">♻</span><strong>Protect the supply</strong><p>Route sewage safely to treatment.</p></div>
+        </div>
+      </div>
+      <a class="learn-link" href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Learn more about charity: water ↗</a>
+      <footer class="home-footer">
+        Developed by <strong>Faizan Ali Wagpurawala</strong>
+      </footer>
+    </section>
+
+    <section id="levels-screen" class="screen" aria-labelledby="levels-title">
+      <div class="screen-heading"><button id="levels-home" class="btn btn-outline">← HOME</button><div><span class="eyebrow">CHOOSE YOUR CHALLENGE</span><h1 id="levels-title">SELECT A LEVEL</h1></div></div>
+      <div id="level-cards" class="level-cards"></div>
+      <p class="tip">Complete a level to unlock the next one. Your best times are saved on this device.</p>
+    </section>
+
+    <section id="game-screen" class="screen" aria-labelledby="game-title">
+      <div class="game-toolbar">
+        <button id="back-button" class="btn btn-outline">← LEVELS</button>
+        <div class="game-stats"><strong id="game-title">LEVEL 1</strong><span>TIME <b id="timer">00:00</b></span><span>BEST <b id="best-time">--:--</b></span></div>
+        <button id="reset-button" class="btn btn-yellow">↻ RESET</button>
+      </div>
+      <div class="mission-bar"><strong id="mission-title">Connect the water!</strong><span id="mission-detail">Rotate the pipes to build a continuous connection.</span></div>
+      <div class="game-world">
+        <div class="world-above">
+          <div id="source-asset" class="world-asset"><img src="watersrc.png" alt="Clean water source" /><span class="asset-label">CLEAN WATER</span></div>
+          <div id="house-asset" class="world-asset"><img src="house.png" alt="Community house" /><span class="asset-label">COMMUNITY</span></div>
+          <div id="treatment-asset" class="world-asset"><img src="sewagetrtmnt.png" alt="Wastewater treatment facility" /><span class="asset-label">TREATMENT</span></div>
+        </div>
+        <div class="world-underground">
+          <div id="port-labels" class="port-labels" aria-label="Pipeline endpoints"></div>
+          <div id="pipe-grid" class="pipe-grid" aria-label="Rotatable pipe puzzle"></div>
+        </div>
+      </div>
+      <div class="game-bottom"><p id="game-feedback" role="status" aria-live="polite">Tap pipes to rotate them clockwise.</p><div class="legend"><span><i class="legend-dot blue"></i>Clean water</span><span id="sewage-legend"><i class="legend-dot brown"></i>Sewage</span></div></div>
+    </section>
+  </main>
+
+  <div id="result-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="result-title">
+    <div class="modal-panel"><div id="result-icon" class="result-icon">🎉</div><h2 id="result-title">CLEAN WATER CONNECTED!</h2><p id="result-message"></p><div id="result-stats" class="result-stats"></div><div id="result-actions" class="result-actions"></div><a class="learn-link" href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">Discover charity: water's mission ↗</a></div>
+  </div>
+  <div id="confetti" class="confetti-layer" aria-hidden="true"></div>
+</body>
+</html>
